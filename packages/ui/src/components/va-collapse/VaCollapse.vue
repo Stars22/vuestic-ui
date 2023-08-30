@@ -106,6 +106,8 @@ export default defineComponent({
     header: { type: String, default: '' },
     icon: { type: String, default: '' },
     color: { type: String, default: 'transparent' },
+    solid: { type: Boolean, default: false },
+    bodyColor: { type: String, default: undefined },
     textColor: { type: String, default: '' },
     iconColor: { type: String, default: 'secondary' },
     colorAll: { type: Boolean, default: false },
@@ -136,6 +138,10 @@ export default defineComponent({
     }
 
     const getBackground = () => {
+      if (props.bodyColor) {
+        return getColor(props.bodyColor)
+      }
+
       return props.color && props.colorAll
         ? getHoverColor(getColor(props.color))
         : ''

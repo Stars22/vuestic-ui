@@ -45,6 +45,7 @@ export {
   VaInnerLoading,
   VaInput,
   VaInputWrapper,
+  VaLayout,
   VaList,
   VaListItem,
   VaListItemLabel,
